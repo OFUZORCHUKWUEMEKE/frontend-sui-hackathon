@@ -17,7 +17,6 @@ export default function Home() {
               <div className="flex items-center">
                 <span className="text-white text-xl font-bold cursor-pointer">Fourier</span>
               </div>
-
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">
                 {/* <a href="#features" className="text-slate-300 hover:text-white transition-colors">Features</a>
@@ -72,7 +71,7 @@ export default function Home() {
         </div>
 
         {/* Features Grid */}
-        <div  className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-16">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-slate-800 p-6 rounded-xl border border-slate-700" id="features">
               <DollarSign className="w-12 h-12 text-blue-500 mb-4" />
