@@ -73,8 +73,11 @@ const Payment = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
-            <div className='py-2 w-4/5 mx-auto'>
+            <div className='py-2 w-4/5 mx-auto flex justify-between items-center'>
                 <h2 className='text-2xl font-bold text-white'>Fourier</h2>
+                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Add to Discord
+                </button>
             </div>
             <div className=" font-['Satoshi'] min-h-screen flex justify-center items-center">
                 <Card className="w-full max-w-md mx-auto shadow-xl border-none">
