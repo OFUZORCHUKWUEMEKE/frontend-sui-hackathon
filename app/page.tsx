@@ -1,12 +1,12 @@
 "use client"
 
-import Image from "next/image";
 import { ChevronRight, MessageSquare, Shield, Zap, CheckCircle, Menu, Clock, Database, Bell, DollarSign } from 'lucide-react';
-
+import { useRouter } from 'next/navigation';
 import React from "react";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const router = useRouter();
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 font-['Satoshi']">
       <div className=" max-w-[1240px] mx-auto">
@@ -22,7 +22,7 @@ export default function Home() {
                 {/* <a href="#features" className="text-slate-300 hover:text-white transition-colors">Features</a>
             <a href="#benefits" className="text-slate-300 hover:text-white transition-colors">Benefits</a>
             <a href="#pricing" className="text-slate-300 hover:text-white transition-colors">Pricing</a> */}
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                <button onClick={() => router.push("https://discord.com/oauth2/authorize?client_id=1334112329398353930")} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                   Add to Discord
                 </button>
               </div>
@@ -45,7 +45,7 @@ export default function Home() {
                   <a href="#features" className="text-slate-300 hover:text-white transition-colors">Features</a>
                   {/* <a href="#benefits" className="text-slate-300 hover:text-white transition-colors">Benefits</a>
                 <a href="#pricing" className="text-slate-300 hover:text-white transition-colors">Pricing</a> */}
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors w-full">
+                  <button onClick={() => router.push("https://discord.com/oauth2/authorize?client_id=1334112329398353930")} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors w-full">
                     Add to Discord
                   </button>
                 </div>
@@ -64,7 +64,7 @@ export default function Home() {
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
               Create custom payment forms with natural language, accept payments via links and QR codes, and track transactions in real time—no coding or setup required.
             </p>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors flex items-center mx-auto">
+            <button onClick={() => router.push("https://discord.com/oauth2/authorize?client_id=1334112329398353930")} className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors flex items-center mx-auto">
               Add to Discord <ChevronRight className="ml-2" />
             </button>
           </div>

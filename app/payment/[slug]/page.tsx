@@ -48,7 +48,7 @@ const Payment = () => {
     useEffect(() => {
         fetchPayment()
     }, [])
-    const supabase = createClient("https://gowfvrwxcjffdazpttem.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdvd2Z2cnd4Y2pmZmRhenB0dGVtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc4OTA1MDIsImV4cCI6MjA1MzQ2NjUwMn0.NVnewfiEh6gKCbERp1sKUFXGmSHhUMV2e-1GIoHe8Mw")
+    const supabase = createClient(process.env.NEXT_SUPABASE_URL || '', process.env.NEXT_SUPABASE_PROJECT_ID || '')
 
     const fetchPayment = async () => {
         try {
@@ -122,15 +122,6 @@ const Payment = () => {
                                         Your payment information is encrypted and secure
                                     </AlertDescription>
                                 </Alert>
-                                {/* <button
-                                    type="submit"
-                                    className="w-full bg-gradient-to-r from-blue-600 to-violet-600 text-white py-4 px-6 rounded-lg 
-                        font-medium text-lg hover:from-blue-700 hover:to-violet-700 
-                        transform transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]
-                        shadow-lg hover:shadow-xl"
-                                >
-                                    Pay Now
-                                </button> */}
                                 <button type='submit' className='w-full bg-black text-white py-4 px-6 rounded-lg 
                         font-medium text-lg hover:from-blue-700 hover:to-violet-700 
                         transform transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]
