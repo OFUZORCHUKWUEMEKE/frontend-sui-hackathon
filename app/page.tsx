@@ -15,7 +15,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
-                <span className="text-white text-xl font-bold cursor-pointer">Fourier</span>
+                <span className="text-white text-xl font-bold cursor-pointer font-mono">Fourier</span>
               </div>
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">

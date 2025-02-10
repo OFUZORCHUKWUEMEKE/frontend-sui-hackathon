@@ -26,12 +26,7 @@ const Payment = () => {
     }
 
     const params = useParams();
-    // const [formData, setFormData] = useState({
-    //     cardNumber: '',
-    //     expiryDate: '',
-    //     cvv: '',
-    //     name: '',
-    // });
+
     const [data, setData] = useState<PaymentData | any>();
     const [loading, setLoading] = useState(false)
     const [errors, setErrors] = useState({});
@@ -49,8 +44,6 @@ const Payment = () => {
         e.preventDefault();
         console.log("Form Submitted:", formData);
     };
-
-    // UMVA4D
 
     useEffect(() => {
         fetchPayment()
@@ -74,17 +67,17 @@ const Payment = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
             <div className='py-2 w-4/5 mx-auto flex justify-between items-center'>
-                <h2 className='text-2xl font-bold text-white'>Fourier</h2>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                <h2 className='text-2xl font-bold text-white font-mono'>Fourier</h2>
+                <button className="bg-blue-600 text-white px-2 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                     Add to Discord
                 </button>
             </div>
             <div className=" font-['Satoshi'] min-h-screen flex justify-center items-center">
-                <Card className="w-full max-w-md mx-auto shadow-xl border-none">
+                <Card className="w-[95%] min-h-[80vh] md:w-full max-w-md mx-auto shadow-xl border-none">
                     <CardHeader className="bg-black text-white rounded-t-lg">
                         <div className=' flex  justify-between'>
                             <CardTitle className="flex items-center gap-3">
-                                <div className='space-y-3'>
+                                <div className='space-y-3 text-md '>
                                     {loading ? (
                                         <Skeleton className="h-4 w-[250px]" />
                                     ) : data?.title}
