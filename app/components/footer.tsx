@@ -4,7 +4,7 @@ import Link from "next/link"
 export function Footer() {
   return (
     <footer className="border-t bg-background">
-      <div className="container flex flex-col gap-10 py-16">
+      <div className="container flex flex-col gap-10 py-16 w-4/5 mx-auto">
         <div className="grid grid-cols-2 gap-12 md:grid-cols-4">
           <div className="flex flex-col gap-4">
             <h3 className="text-lg font-semibold">Product</h3>
@@ -69,7 +69,7 @@ export function Footer() {
         </div>
         <Separator />
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Quinx. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Fourier. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
               Privacy Policy

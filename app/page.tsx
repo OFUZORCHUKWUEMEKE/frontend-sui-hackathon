@@ -1,147 +1,237 @@
 "use client"
 
-import { ChevronRight, MessageSquare, Shield, Zap, CheckCircle, Menu, Clock, Database, Bell, DollarSign } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import React from "react";
+import { SiteHeader } from "./components/site-header"
+import { Button } from "@/components/ui/button"
+import { Separator } from "../components/ui/separator"
+import { motion } from "framer-motion"
+import { Footer } from "./components/footer"
+import { Zap, Command, Scale, Bot, Shield, Sparkles, Check } from "lucide-react"
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const router = useRouter();
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 font-['Satoshi']">
-      <div className=" max-w-[1240px] mx-auto">
-        {/* Navbar */}
-        <nav className="fixed top-0 left-0 right-0 bg-slate-900/80 backdrop-blur-sm z-50 border-b border-slate-800">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between h-16">
-              <div className="flex items-center">
-                <span className="text-white text-xl font-bold cursor-pointer font-mono">Fourier</span>
-              </div>
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
-                {/* <a href="#features" className="text-slate-300 hover:text-white transition-colors">Features</a>
-            <a href="#benefits" className="text-slate-300 hover:text-white transition-colors">Benefits</a>
-            <a href="#pricing" className="text-slate-300 hover:text-white transition-colors">Pricing</a> */}
-                <button onClick={() => router.push("https://discord.com/oauth2/authorize?client_id=1334112329398353930")} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                  Add to Discord
-                </button>
-              </div>
+    <div className="relative flex min-h-screen flex-col">
+      <SiteHeader />
+      <main className="flex-1">
+        <section className="flex min-h-screen flex-col items-center justify-center space-y-10 py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="container flex flex-col items-center justify-center gap-6 text-center"
+          >
+            <motion.a
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              href="#"
+              className="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm font-medium"
+            >
+              🎉 <Separator className="mx-2 h-4" orientation="vertical" /> Introducing Fourier
+            </motion.a>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-2xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl lg:leading-[1.1]"
+            >
+              Effortless stablecoin collections.
+              <br />
+              AI-powered payment management.
+            </motion.h1>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="max-w-[750px] text-center text-md font-light text-muted-foreground sm:text-xl"
+            >
+              Streamline your stablecoin payments with intelligent automation, Our AI-powered platform helps businesses and DAOs collect, track, and manage USDT transactions effortlessly.
+            </motion.span>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex gap-4"
+            >
+              <Button size="lg" className="h-12 px-8">
+                Start Building
+              </Button>
+              <Button size="lg" variant="outline" className="h-12 px-8">
+                View Demo
+              </Button>
+            </motion.div>
+          </motion.div>
+        </section>
 
-              {/* Mobile Menu Button */}
-              <div className="md:hidden">
-                <button
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-slate-300 hover:text-white"
-                >
-                  <Menu className="h-6 w-6" />
-                </button>
-              </div>
-            </div>
+        <Separator className="my-12" />
 
-            {/* Mobile Navigation */}
-            {isMenuOpen && (
-              <div className="md:hidden py-4">
-                <div className="flex flex-col space-y-4">
-                  <a href="#features" className="text-slate-300 hover:text-white transition-colors">Features</a>
-                  {/* <a href="#benefits" className="text-slate-300 hover:text-white transition-colors">Benefits</a>
-                <a href="#pricing" className="text-slate-300 hover:text-white transition-colors">Pricing</a> */}
-                  <button onClick={() => router.push("https://discord.com/oauth2/authorize?client_id=1334112329398353930")} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors w-full">
-                    Add to Discord
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        </nav>
-
-        {/* Hero Section */}
-        <div className="container mx-auto px-4 pt-32 pb-16" id="features">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold md:leading-none leading-[55px] text-white mb-6">
-              Simplify stablecoin payments using AI-powered automation.
-              {/* Your All-in-One Crypto Payment Assistant */}
-            </h1>
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Create custom payment forms with natural language, accept payments via links and QR codes, and track transactions in real time—no coding or setup required.
+        <section className="container w-4/5 mx-auto space-y-12 py-12 md:py-24 lg:py-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center"
+          >
+            <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">Features built for scale</h2>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+              Quinx provides all the tools you need to create powerful Discord bots that can scale to millions of users.
             </p>
-            <button onClick={() => router.push("https://discord.com/oauth2/authorize?client_id=1334112329398353930")} className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors flex items-center mx-auto">
-              Add to Discord <ChevronRight className="ml-2" />
-            </button>
-          </div>
-        </div>
-
-        {/* Features Grid */}
-        <div className="container mx-auto px-4 py-16">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-slate-800 p-6 rounded-xl border border-slate-700" id="features">
-              <DollarSign className="w-12 h-12 text-blue-500 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-3">
-                Seamless Stablecoin Payments
-              </h3>
-              <p className="text-slate-300">
-                Accept USDC and other stablecoins with ease through secure payment links and QR codes, making transactions fast and frictionless.
-              </p>
-            </div>
-
-            <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
-              <Database className="w-12 h-12 text-blue-500 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-3">
-                AI-Powered Payment Form Creation
-              </h3>
-              <p className="text-slate-300">
-                Generate custom payment forms effortlessly using natural language. No manual setup—just describe what you need, and the bot does the rest.
-              </p>
-            </div>
-
-            <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
-              <Zap className="w-12 h-12 text-blue-500 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-3">
-                Sui-Powered Speed
-              </h3>
-              <p className="text-slate-300">
-                Built on Sui blockchain for lightning-fast, low-cost transactions with enterprise-grade security and reliability.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Benefits Section */}
-        <div id="benefits" className="container mx-auto px-4 py-16">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Why Choose Fourier?
-          </h2>
-          <div className="max-w-2xl mx-auto">
-            {[
-              "Eliminate manual payment tracking with automated collection and verification",
-              "Create and deploy payment forms in seconds through natural conversation",
-              "Process transactions quickly and cheaply on the Sui blockchain",
-              "Collect customer data and payments in one seamless flow",
-              "Get real-time payment tracking and instant notifications"
-            ].map((benefit, index) => (
-              <div key={index} className="flex items-center mb-4">
-                <CheckCircle className="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
-                <span className="text-slate-300">{benefit}</span>
-              </div>
+          </motion.div>
+          <div className="mx-auto grid gap-8 sm:max-w-3xl sm:grid-cols-2 lg:max-w-5xl lg:grid-cols-3">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{
+                  rotateX: index % 2 === 0 ? 5 : -5,
+                  rotateY: index % 3 === 0 ? 5 : -5,
+                  transition: { duration: 0.3 },
+                }}
+                className="relative overflow-hidden rounded-lg border bg-background p-2"
+              >
+                <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
+                  <feature.icon className="h-12 w-12 text-primary" />
+                  <div className="space-y-2">
+                    <h3 className="font-bold">{feature.name}</h3>
+                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* CTA Section */}
-        <div className="container mx-auto px-4 py-16">
-          <div className="bg-slate-800 rounded-xl p-8 text-center max-w-3xl mx-auto border border-slate-700">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Ready to Transform Your Payment Collection?
-            </h2>
-            <p className="text-slate-300 mb-6">
-              Join the future of crypto payments. Start collecting payments through simple Discord conversations today.
+        <Separator className="my-12" />
+
+        {/* <section id="pricing" className="container w-4/5 mx-auto py-12 md:py-24 lg:py-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center"
+          >
+            <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">Simple, transparent pricing</h2>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+              Choose the plan that's right for you and start building amazing Discord bots today.
             </p>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors">
-              Add to Discord
-            </button>
+          </motion.div>
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            {pricingPlans.map((plan, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col overflow-hidden rounded-lg border bg-background"
+              >
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold">{plan.name}</h3>
+                  <div className="mt-4 flex items-baseline text-3xl font-bold">
+                    ${plan.price}
+                    <span className="ml-1 text-xl font-normal text-muted-foreground">/month</span>
+                  </div>
+                  <p className="mt-4 text-muted-foreground">{plan.description}</p>
+                </div>
+                <div className="flex flex-1 flex-col justify-between p-6">
+                  <ul className="space-y-4">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <Check className="mr-2 h-5 w-5 text-primary" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button className="mt-8 w-full">{plan.buttonText}</Button>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </div>
-    </div>
+        </section> */}
 
-  );
+        <Separator className="my-12" />
+
+        <section className="container py-12 md:py-24 lg:py-32 w-4/5 mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center"
+          >
+            <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">Ready to get started?</h2>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+              Create your first Discord bot in minutes. No credit card required.
+            </p>
+            <Button size="lg" className="mt-4">
+              Launch App
+            </Button>
+          </motion.div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  )
 }
+
+const features = [
+  {
+    name: "Easy Setup",
+    description: "Get your bot up and running in minutes with our intuitive interface.",
+    icon: Zap,
+  },
+  {
+    name: "Powerful Commands",
+    description: "Create complex commands with our visual command builder.",
+    icon: Command,
+  },
+  {
+    name: "Scale Infinitely",
+    description: "Built to handle millions of users and messages.",
+    icon: Scale,
+  },
+  {
+    name: "AI-Powered",
+    description: "Leverage artificial intelligence to create smarter responses.",
+    icon: Bot,
+  },
+  {
+    name: "Enterprise Security",
+    description: "Bank-grade security to protect your bot and users.",
+    icon: Shield,
+  },
+  {
+    name: "Custom Features",
+    description: "Build custom features without touching any code.",
+    icon: Sparkles,
+  },
+] as const
+
+const pricingPlans = [
+  {
+    name: "Free",
+    price: 0,
+    description: "Perfect for small communities and hobbyists.",
+    features: ["1 bot", "Up to 100 users", "Basic command set", "Community support"],
+    buttonText: "Start for Free",
+  },
+  {
+    name: "Pro",
+    price: 8,
+    description: "Ideal for growing communities and businesses.",
+    features: [
+      "Unlimited bots",
+      "Unlimited users",
+      "Advanced commands",
+      "Priority support",
+      "Custom branding",
+      "Analytics dashboard",
+    ],
+    buttonText: "Upgrade to Pro",
+  },
+] as const
+
