@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "../components/ui/separator"
 import { motion } from "framer-motion"
 import { Footer } from "./components/footer"
-import { Zap, Command, Scale, Bot, Shield, Sparkles, Check } from "lucide-react"
+import { Zap, Command, Scale, Bot, Shield, Sparkles, Check ,Link} from "lucide-react"
 
 export default function Home() {
   return (
@@ -74,7 +74,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">Features built for scale</h2>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-              Quinx provides all the tools you need to create powerful Discord bots that can scale to millions of users.
+              Transform how you handle stablecoin payments.
             </p>
           </motion.div>
           <div className="mx-auto grid gap-8 sm:max-w-3xl sm:grid-cols-2 lg:max-w-5xl lg:grid-cols-3">
@@ -165,7 +165,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">Ready to get started?</h2>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-              Create your first Discord bot in minutes. No credit card required.
+              Our AI assistant automates collections, tracks transactions in real-time, and manages payment data seamlessly.
             </p>
             <Button size="lg" className="mt-4">
               Launch App
@@ -185,13 +185,13 @@ const features = [
     icon: Zap,
   },
   {
-    name: "Powerful Commands",
-    description: "Create complex commands with our visual command builder.",
-    icon: Command,
+    name: "Payment Link",
+    description: "Create customizable links amd send to your community",
+    icon: Link,
   },
   {
     name: "Scale Infinitely",
-    description: "Built to handle millions of users and messages.",
+    description: "Built to handle millions of users and transactions.",
     icon: Scale,
   },
   {
