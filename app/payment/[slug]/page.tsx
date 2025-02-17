@@ -6,6 +6,8 @@ import { CreditCard, Lock, CheckCircle } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js'
 import { Skeleton } from "@/components/ui/skeleton"
+import { MoonIcon, SunIcon } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 const Payment = () => {
     interface PaymentData {
@@ -65,13 +67,17 @@ const Payment = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
-            <div className='py-2 w-4/5 mx-auto flex justify-between items-center'>
-                <h2 className='text-2xl font-bold text-white font-mono'>Fourier</h2>
-                <button className="bg-blue-600 text-white px-2 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                    Add to Discord
-                </button>
-            </div>
+        <div className="min-h-screen bg-background text-foreground">
+            <header className="border-b">
+                <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+                    <h1 className="text-2xl font-bold">Fourier</h1>
+                    <Button variant="ghost" size="icon" onClick={() => document.documentElement.classList.toggle("dark")}>
+                        <SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                        <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                        <span className="sr-only">Toggle theme</span>
+                    </Button>
+                </div>
+            </header>
             <div className=" font-['Satoshi'] min-h-screen flex justify-center items-center">
                 <Card className="w-[95%] min-h-[80vh] md:w-full max-w-md mx-auto shadow-xl border-none">
                     <CardHeader className="bg-black text-white rounded-t-lg">

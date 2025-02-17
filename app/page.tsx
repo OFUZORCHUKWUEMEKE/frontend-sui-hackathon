@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "../components/ui/separator"
 import { motion } from "framer-motion"
 import { Footer } from "./components/footer"
-import { Zap, Command, Scale, Bot, Shield, Sparkles, Check ,Link} from "lucide-react"
+import { Zap, Command, Scale, Bot, Shield, Sparkles, Check, Link } from "lucide-react"
+import { Globe } from "@/components/magicui/globe"
 
 export default function Home() {
   return (
@@ -62,9 +63,9 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <Separator className="my-12" />
+        <Separator className="my-8" />
 
-        <section className="container w-4/5 mx-auto space-y-12 py-12 md:py-24 lg:py-32">
+        <section className="container w-4/5 mx-auto space-y-12 py-8 md:py-24 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -153,9 +154,9 @@ export default function Home() {
           </div>
         </section> */}
 
-        <Separator className="my-12" />
+        {/* <Separator className="my-12" /> */}
 
-        <section className="container py-12 md:py-24 lg:py-32 w-4/5 mx-auto">
+        <section className="container py-8 md:py-24 lg:py-32 w-4/5 mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
