@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
-import { Bot, Zap, Shield, Sparkles, Cpu, Globe,Icon } from "lucide-react"
-import { ElementType } from "react";
+import { Bot, Zap, Shield, Sparkles, Cpu, Globe, Icon, LucideProps } from "lucide-react"
+import { ElementType, ForwardRefExoticComponent, RefAttributes } from "react";
 
 const features = [
   { icon: Bot, title: "Easy Bot Creation", description: "Build complex bots with a simple interface" },
@@ -12,7 +12,7 @@ const features = [
 ]
 
 interface FeatureCardProps {
-  icon: ElementType;
+  icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;
   title: string;
   description: string;
 }

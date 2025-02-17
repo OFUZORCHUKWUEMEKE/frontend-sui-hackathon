@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Bot, Zap, Shield, Sparkles, Cpu, Globe } from "lucide-react"
+import { Bot, Zap, Shield, Sparkles, Cpu, Globe, LucideProps } from "lucide-react"
+import { ForwardRefExoticComponent, RefAttributes } from "react";
 
 const features = [
   { icon: Bot, title: "Easy Bot Creation", description: "Build complex bots with a simple interface" },
@@ -12,6 +13,11 @@ const features = [
   { icon: Globe, title: "Global Scaling", description: "Scale your bots to millions of users effortlessly" },
 ]
 
+interface FeatureCardProps {
+  icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;
+  title: string;
+  description: string;
+}
 export default function FeatureSection() {
   return (
     <motion.section
@@ -37,7 +43,7 @@ export default function FeatureSection() {
   )
 }
 
-function FeatureCard({ icon: Icon, title, description }) {
+function FeatureCard({ icon: Icon, title, description }:FeatureCardProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.05, rotateY: 5 }}

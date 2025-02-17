@@ -1,5 +1,5 @@
-import type { LightbulbIcon as LucideProps } from "lucide-react"
-
+import { LightbulbIcon } from "lucide-react"
+type LucideProps = React.ComponentProps<typeof LightbulbIcon>;
 export function Zap(props: LucideProps) {
   return (
     <svg
