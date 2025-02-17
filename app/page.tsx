@@ -53,7 +53,7 @@ export default function Home() {
               className="flex gap-4"
             >
               <Button size="lg" className="h-12 px-8">
-                Start Building
+                Launch App
               </Button>
               <Button size="lg" variant="outline" className="h-12 px-8">
                 View Demo

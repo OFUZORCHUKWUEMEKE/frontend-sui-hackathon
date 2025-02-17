@@ -32,7 +32,7 @@ export default function Features() {
   )
 }
 
-function FeatureCard({ icon: Icon, title, description }) {
+function FeatureCard({ icon: Icon, title, description }:{icon:any,title:any,description:any}) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
       <div className="mb-4 text-sky-500">
