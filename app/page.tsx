@@ -65,7 +65,7 @@ export default function Home() {
 
         <Separator className="my-8" />
 
-        <section className="container w-4/5 mx-auto space-y-12 py-8 md:py-24 lg:py-32">
+        <section className="container w-[90%] mx-auto md:w-4/5 space-y-12 py-8 md:py-24 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

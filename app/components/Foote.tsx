@@ -2,15 +2,15 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gray-900 text-white py-12 w-full">
+      <div className="container w-4/5 mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quinx</h3>
+            <h3 className="text-lg font-semibold mb-4">Fourier</h3>
             <p className="text-gray-400">Building the future of Discord bots, one click at a time.</p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">Fourier Links</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="#features" className="text-gray-400 hover:text-white transition-colors">

@@ -12,10 +12,13 @@ import {
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { Button } from "@/components/ui/button"
+import React from "react"
+import { LaunchDialog } from "./LaunchDialog"
 
 export function SiteHeader() {
     const pathname = usePathname()
     const isAuthPage = pathname === "/signin" || pathname === "/register"
+    const [open, setOpen] = React.useState(false);
 
     return (
         <div className="w-full">
@@ -25,7 +28,7 @@ export function SiteHeader() {
                 transition={{ duration: 0.5 }}
                 className="fixed top-0 z-50 w-full mx-auto border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
             >
-                <div className="container flex h-20 w-4/5 mx-auto items-center justify-between">
+                <div className="container flex h-20 w-[90%] mx-auto md:w-4/5 items-center justify-between">
                     <Link href="/" className="flex items-center space-x-2">
                         <motion.span
                             initial={{ opacity: 0 }}
@@ -90,13 +93,14 @@ export function SiteHeader() {
                             {/* <Button variant="ghost" size="sm" asChild>
                                 <Link href="/signin">Launch App</Link>
                             </Button> */}
-                            <Button size="sm" asChild>
-                                <Link href="/register">Launch App</Link>
+                            <Button size="sm" asChild onClick={()=>setOpen(!open)}>
+                                <Link href="#">Launch App</Link>
                             </Button>
                         </div>
                     )}
                 </div>
             </motion.header>
+            <LaunchDialog open={open}/>
         </div>
 
     )
