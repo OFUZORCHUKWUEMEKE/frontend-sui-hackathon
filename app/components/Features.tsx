@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Bot, Zap, Shield, Sparkles, Cpu, Globe,Icon } from "lucide-react"
+import { ElementType } from "react";
 
 const features = [
   { icon: Bot, title: "Easy Bot Creation", description: "Build complex bots with a simple interface" },
@@ -9,6 +10,12 @@ const features = [
   { icon: Cpu, title: "Advanced Automation", description: "Automate tasks with powerful workflows" },
   { icon: Globe, title: "Global Scaling", description: "Scale your bots to millions of users effortlessly" },
 ]
+
+interface FeatureCardProps {
+  icon: ElementType;
+  title: string;
+  description: string;
+}
 
 export default function Features() {
   return (
@@ -32,7 +39,7 @@ export default function Features() {
   )
 }
 
-function FeatureCard({ icon: Icon, title, description }: { icon: any, title: any, description: any }) {
+function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
       <div className="mb-4 text-sky-500">
